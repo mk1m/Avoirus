@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //config params
-
-    private Rigidbody2D playerRB;
+    // config params
 
     [Header("Player")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] public int health = 200;
+    public Joystick joystick;
 
     [Header("VFX")]
     [SerializeField] GameObject deathVFX;
@@ -24,7 +23,8 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip shootSound;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;
 
-    public Joystick joystick;
+    
+    float moveHorizontal;
 
     float xMin;
     float xMax;
@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
         //starting score timer
         TimerOn = true;
         startTime = Time.time;
-        playerRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -102,13 +101,8 @@ public class Player : MonoBehaviour
     
     private void Move()
     {
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-
-        // joystick horizontal movement
-        playerRB.velocity = new Vector3(joystick.Horizontal * moveSpeed,
-            playerRB.velocity.y,
-            joystick.Vertical * moveSpeed);
+        var deltaX = joystick.Horizontal * Time.deltaTime * moveSpeed;
+        var deltaY = joystick.Vertical * Time.deltaTime * moveSpeed;
 
         var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);

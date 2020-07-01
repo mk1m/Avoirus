@@ -118,6 +118,7 @@ MonoBehaviour:
   moveSpeed: 10
   padding: 1
   health: 1
+  joystick: {fileID: 0}
   deathVFX: {fileID: 1888022694116760580, guid: 33b58125ada72433592d1e500f367d13,
     type: 3}
   durationOfExplosion: 2
@@ -125,7 +126,6 @@ MonoBehaviour:
   deathSoundVolume: 0.2
   shootSound: {fileID: 0}
   shootSoundVolume: 0.21
-  joystick: {fileID: 0}
 --- !u!60 &104251630303015343
 PolygonCollider2D:
   m_ObjectHideFlags: 0
