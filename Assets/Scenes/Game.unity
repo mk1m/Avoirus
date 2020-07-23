@@ -416,18 +416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7c1285b85d740f0a0c1710cdd85624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 5
-  touchStart: 0
-  pointA: {x: 0, y: 0}
-  pointB: {x: 0, y: 0}
-  padding: 1
-  xMin: 0
-  xMax: 0
-  yMin: 0
-  yMax: 0
-  circle: {fileID: 0}
-  outerCircle: {fileID: 0}
 --- !u!1001 &1653117772
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,6 +28,11 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene("About");
     }
 
+    public void LoadAcknowledgements()
+    {
+        SceneManager.LoadScene("Acknowledgements");
+    }
+
     public void LoadEnd()
     {
         StartCoroutine(WaitAndLoad());
